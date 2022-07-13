@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        
+        <header th:fragment="header" class="header">
+            <nav class="nav">
+                
+                <a th:href="@{/}" class="logo nav-link">GenerosiApp</a>
+                
+            </nav>
+            
+        </header>
+        
+        <footer th:fragment="footer" class="footer">
+            <p>&COPY Derechos Reservados 2022</p>
+        </footer>
+        
+    </body>
+</html>
