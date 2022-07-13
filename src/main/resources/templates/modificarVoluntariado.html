@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h2>Datos de los voluntariados</h2>
+        <br>
+        <a th:href="@{/}">Regresar</a>
+        <br>
+        <form th:action="@{/guardarVoluntariado}"
+              method="post"
+              th:object="${voluntariado}">
+            
+            <input type="hidden" name="id_voluntariado" th:field="*{id_voluntariado}"/>
+            
+            <label for="fecha">fecha</label>
+            <input type="text" name="fecha" th:field="*{fecha}"/>
+            <br>
+            <label for="direccion">direccion</label>
+            <input type="text" name="direccion" th:field="*{direccion}"/>
+            <br>
+            <label for="motivo">motivo</label>
+            <input type="text" name="motivo" th:field="*{motivo}"/>
+            <br>
+            <input type="submit" name="guardar" value="Guardar"/>
+        </form>
+    </body>
+</html>

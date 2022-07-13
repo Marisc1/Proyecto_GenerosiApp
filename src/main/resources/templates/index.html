@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8">
+    </head>
+    <body id="body">
+        <h1>Lista de voluntariados.</h1>
+        <a th:href="@{/nuevoVoluntariado}">Nuevo Voluntariado</a>
+        <div>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Direccion</th>
+                        <th>Motivo</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="voluntariado : ${voluntariados}">
+                        <td th:text="${voluntariado.fecha}"></td>
+                        <td th:text="${voluntariado.direccion}"></td>
+                        <td th:text="${voluntariado.motivo}"></td>
+                        <td><a th:href="@{/modificarVoluntariado/} + ${voluntariado.id_voluntariado}">Modificar</td>
+                        <td><a th:href="@{/eliminarVoluntariado/} + ${voluntariado.id_voluntariado}">Eliminar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
