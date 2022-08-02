@@ -4,17 +4,20 @@
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>GenerosiApp</title>
+        
         <meta charset="UTF-8"/>
         <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
+        
         <div class="contenido">
             <h2>Lista de voluntariados</h2>
 
             <div>
                 <a th:href="@{/nuevoVoluntariado}">Nuevo Voluntariado</a>
-
+                <br>
+                    <a th:href="@{/a}">Voluntarios</a>
                 <table border="1">
                     <thead>
                         <tr>
@@ -35,6 +38,7 @@
                         </tr>
                     </tbody>
                 </table>
+                
             </div>
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
