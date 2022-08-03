@@ -52,13 +52,14 @@ body {
     transition: 1s;
 }
 .footer {
-    background-color: black;
+    background-color: seagreen;
     text-align: center;
     height: 20px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    color: white;
 }
 .contenido {
     background-color: #ADD8E6;
