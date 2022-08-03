@@ -4,13 +4,13 @@
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>GenerosiApp</title>
-        
+
         <meta charset="UTF-8"/>
         <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-        
+
         <div class="contenido">
             <h2>Lista de voluntariados</h2>
 
@@ -18,29 +18,33 @@
                 <a th:href="@{/nuevoVoluntariado}">Nuevo Voluntariado</a>
                 <br>
                     <a th:href="@{/a}">Voluntarios</a>
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Direccion</th>
-                            <th>Motivo</th>
-                            <th>Modificar</th>
-                            <th>Eliminar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="voluntariado : ${voluntariados}">
-                            <td th:text="${voluntariado.fecha}"></td>
-                            <td th:text="${voluntariado.direccion}"></td>
-                            <td th:text="${voluntariado.motivo}"></td>
-                            <td><a th:href="@{/modificarVoluntariado/} + ${voluntariado.id_voluntariado}">Modificar</td>
-                            <td><a th:href="@{/eliminarVoluntariado/} + ${voluntariado.id_voluntariado}">Eliminar</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-            </div>
-        </div>
-        <footer th:replace="layout/plantilla :: footer"/>
-    </body>
-</html>
+                    <br>
+                        <a th:href="@{/b}">Administradores</a>
+                        <br>
+                            <a th:href="@{/c}">Inicio</a>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Direccion</th>
+                                    <th>Motivo</th>
+                                    <th>Modificar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="voluntariado : ${voluntariados}">
+                                    <td th:text="${voluntariado.fecha}"></td>
+                                    <td th:text="${voluntariado.direccion}"></td>
+                                    <td th:text="${voluntariado.motivo}"></td>
+                                    <td><a th:href="@{/modificarVoluntariado/} + ${voluntariado.id_voluntariado}">Modificar</td>
+                                    <td><a th:href="@{/eliminarVoluntariado/} + ${voluntariado.id_voluntariado}">Eliminar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        </div>
+                        </div>
+                        <footer th:replace="layout/plantilla :: footer"/>
+                        </body>
+                        </html>

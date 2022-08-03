@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>GenerosiApp</title>
+
+        <meta charset="UTF-8"/>
+        <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+
+        <div class="contenido">
+            <h2>Lista de voluntariados</h2>
+
+            <div>
+                <a th:href="@{/}">Voluntariados</a>
+                <br>
+                    <a th:href="@{/a}">Voluntarios</a>
+                    <br>
+                        <a th:href="@{/b}">Administradores</a>
+                        <br>
+                            <a href="https://www.paypal.com/cr/webapps/mpp/home?kid=p66054198563&gclid=Cj0KCQjwuaiXBhCCARIsAKZLt3lnGcywROi0sEBpjj_-MHcUOp9PEEpDEIGkFVzV9t_D95xWlnpFEI4aAssWEALw_wcB&gclsrc=aw.ds">Donaciones</a>
+                        </div>
+                        </div>
+                        <footer th:replace="layout/plantilla :: footer"/>
+                        </body>
+                        </html>
