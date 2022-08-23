@@ -17,11 +17,11 @@
             <div>
                 <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevoVoluntario}">Nuevo Voluntario</a>
                 <br>
-                    <a th:href="@{/}">Voluntariados</a>
+                    <a th:href="@{/c}">Voluntariados</a>
                     <br>
                         <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/b}">Administradores</a>
                         <br>
-                            <a th:href="@{/c}">Inicio</a>
+                            <a th:href="@{/}">Inicio</a>
                         <table border="1">
                             <thead>
                                 <tr>

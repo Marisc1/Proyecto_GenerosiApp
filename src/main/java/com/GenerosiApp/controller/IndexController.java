@@ -30,15 +30,16 @@ public class IndexController {
 
     
     @GetMapping("/c")
-    public String Inicio() {
-        return "Inicio";
-    }
-    
-    @GetMapping("/")
-    public String inicio1(Model model) {
+    public String Inicio(Model model) {
         var voluntariados = voluntariadoService.getVoluntariados();
         model.addAttribute("voluntariados", voluntariados);
         return "index";
+    }
+    
+    @GetMapping("/")
+    public String inicio1() {
+        
+        return "inicio";
     }
 
     @GetMapping("/a")

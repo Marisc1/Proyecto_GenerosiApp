@@ -13,7 +13,7 @@
         <div class="contenido">
             <h2>Datos de los voluntariados</h2>
         <br>
-        <a th:href="@{/}">Regresar</a>
+        <a th:href="@{/c}">Regresar</a>
         <br>
         <form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{/guardarVoluntariado}"
               method="post"
