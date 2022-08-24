@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8"/>
+        <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+
+        <div class="contenido">
+            <h1>Lista de administradores</h1>
+            <br>
+                
+                <nav2><ul>
+                        <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevoAdministrador}">Nuevo Administrador</a> </li>
+                        <li> <a th:href="@{/c}">Voluntariados</a> </li>
+                        <li>  <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/a}">Voluntarios</a> </li>
+                        <li> <a th:href="@{/}">Inicio</a> </li>
+                        
+                    </ul>
+            <div>
+                <br>
+                    
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Cedula</th>
+                                    <th>Correo</th>
+                                    <th>Contraseña</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Telefono</th>
+                                    <th sec:authorize="hasRole('ROLE_ADMIN')">Modificar</th>
+                                    <th sec:authorize="hasRole('ROLE_ADMIN')">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="administrador : ${administradores}">
+                                    <td th:text="${administrador.cedula}"></td>
+                                    <td th:text="${administrador.correo}"></td>
+                                    <td th:text="${administrador.contrasena}"></td> 
+                                    <td th:text="${administrador.nombre}"></td>
+                                    <td th:text="${administrador.apellidos}"></td>
+                                    <td th:text="${administrador.telefono}"></td>
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/modificarAdministrador/} + ${administrador.id_administrador}">Modificar</td>
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminarAdministrador/} + ${administrador.id_administrador}">Eliminar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        </div>
+                        <footer th:replace="layout/plantilla :: footer"/>
+                        </body>
+                        </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8"/>
+        <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+
+        <div class="contenido">
+            <h2>Lista de solicitudes</h2>
+            <br>
+            <div>
+                <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/nuevoSolicitud}">Nuevo Solicitud</a>
+                <br>
+                <br>
+                <br>
+                <a th:href="@{/}">Inicio</a>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Cedula</th>
+                                    <th>Correo</th>
+                                    <th>Contraseña</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Telefono</th>
+                                    <th sec:authorize="hasRole('ROLE_ADMIN')">Aceptar Solicitud</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="solicitud : ${solicitudes}">
+                                    <td th:text="${solicitud.cedula}"></td>
+                                    <td th:text="${solicitud.correo}"></td>
+                                    <td th:text="${solicitud.contrasena}"></td> 
+                                    <td th:text="${solicitud.nombre}"></td>
+                                    <td th:text="${solicitud.apellidos}"></td>
+                                    <td th:text="${solicitud.telefono}"></td>
+                                    <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/eliminarSolicitud/} + ${solicitud.id_solicitud}">Aceptar solicitud</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        </div>
+                        <footer th:replace="layout/plantilla :: footer"/>
+                        </body>
+                        </html>

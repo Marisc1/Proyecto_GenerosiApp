@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <title>GenerosiApp</title>
+        <meta charset="UTF-8"/>
+        <link href="/css/estilo_pagina.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        
+
+        <div class="contenido">
+            <h1>Menú</h1>
+            
+            <nav><ul>
+                <li> <a th:href="@{/c}">Voluntariados</a></li>
+                <li> <a th:href="@{/a}">Voluntarios</a></li>
+                <li><a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/b}">Administradores</a></li>
+                <li> <a th:href="@{/d}">Solicitudes para ser administrador</a></li>
+                <li> <a th:href="@{/nuevoSolicitud}">Solicitar para ser Administrador</a></li>
+                <li><a href="https://www.paypal.com/cr/webapps/mpp/home?kid=p66054198563&gclid=Cj0KCQjwuaiXBhCCARIsAKZLt3lnGcywROi0sEBpjj_-MHcUOp9PEEpDEIGkFVzV9t_D95xWlnpFEI4aAssWEALw_wcB&gclsrc=aw.ds">Donaciones</a></li>
+            </ul>
+           </nav>
+            <br>
+               <ul class="slider"> 
+                   <li id="slide1">
+                       <img src="https://lamenteesmaravillosa.com/wp-content/uploads/2014/11/generosidad-1.jpg">
+                   </li>
+                   <li id="slide2">
+                       <img src="https://www.elmundotenecesita.com/wp-content/uploads/2016/10/Generosidad.jpg">
+                   </li>
+                   
+                   <li id="slide3">
+                       <h4>Generosidad</h4>
+                       <p>La generosidad es el hábito de dar o compartir con los
+                           demás sin recibir nada a cambio. Comparado a menudo 
+                           con la caridad como virtud, la generosidad se acepta 
+                           extensamente en la sociedad como un hábito deseable. </p>
+                   </li>
+
+               </ul>
+                
+                <ul class="menu">
+                    <li>
+                        <a href="#slide1" >ㅤ</a>
+                    </li>
+                     <li>
+                        <a href="#slide2" >ㅤ</a>
+                    </li>
+                    <li>
+                        <a href="#slide3" >ㅤ</a>
+                    </li>
+                </ul>
+           
+            <br>
+            <div>
+               
+               
+                        </div>
+                        </div>
+                        <footer th:replace="layout/plantilla :: footer"/>
+                        </body>
+                        </html>
